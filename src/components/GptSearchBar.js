@@ -20,7 +20,8 @@ const GptSearchBar = () => {
     const gptQuery = 'Act as a movie Recommendation system and suggest some movies for the query : ' + searchText.current.value + '. Only give me names of five movies, comma separated like the example result given ahead. Example Result: Gadar, Sholay, Golmaal, Don, Kabhi Khushi Kabhie Gham';
     searchText.current.value = null;
     
-    try{const gptResults = await openai.chat.completions.create({
+    try{
+      const gptResults = await openai.chat.completions.create({
       messages: [{ role: 'user', content: gptQuery }],
       model: 'gpt-3.5-turbo',
     });
